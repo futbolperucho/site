@@ -1,9 +1,12 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+
+
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Video incrustado</title>
+    <title>Futbol Perucho - Partidos en Vivo</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -43,25 +46,105 @@
     </style>
 </head>
 <body>
+<style>
+    /* Estilos generales del popup */
+    #popup {
+      position: fixed;
+      inset: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: rgba(0, 0, 0, 0.9); /* fondo oscuro */
+      z-index: 99999;
+      animation: fadeIn 0.5s ease-in-out;
+    }
+
+    /* Imagen grande */
+    #popup img {
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 10px;
+      box-shadow: 0 0 40px rgba(255, 255, 255, 0.2);
+      animation: zoomIn 0.6s ease;
+    }
+
+    /* Botón para cerrar (la X) */
+    #cerrar {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      color: white;
+      font-size: 40px;
+      font-weight: bold;
+      cursor: pointer;
+      user-select: none;
+      transition: transform 0.2s;
+    }
+    #cerrar:hover {
+      transform: scale(1.2);
+    }
+
+    /* Animaciones */
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    @keyframes zoomIn {
+      from { transform: scale(0.8); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Popup que aparece automáticamente -->
+  <div id="popup">
+    <span id="cerrar">&times;</span>
+    <img src="apoya.png" alt="Imagen a pantalla completa">
+  </div>
+
+  <script>
+    const popup = document.getElementById("popup");
+    const cerrar = document.getElementById("cerrar");
+
+    // Cerrar al hacer clic en la X o fuera de la imagen
+    cerrar.addEventListener("click", () => popup.remove());
+    popup.addEventListener("click", e => {
+      if (e.target === popup) popup.remove();
+    });
+  </script>
+
     <header>
         <h1>Alianza Lima vs Sport Boys</h1>
     </header>
 
     <main>
         <!-- Sustituye el enlace después de "src=" con el de tu video de YouTube -->
+
         <iframe 
             src="https://tiogolhd.com/vivo/canal.php?stream=tudn" 
+
             title="Reproductor de video de YouTube" 
             frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             allowfullscreen>
+<img src="logo.png" alt="Logo" 
+     
+
         </iframe>
 
+
+  
         <p>Se abre el telón de una nueva jornada de la Liga 1: Alianza Lima recibe a Sport Boys en el Estadio Matute</p>
     </main>
 
     <footer>
         © 2025 - Futbol Perucho
     </footer>
+
+
+
+
+
 </body>
 </html>
