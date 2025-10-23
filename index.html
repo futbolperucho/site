@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Partidos en vivo</title>
+  <style>
+    :root{--bg:#f7f7f9;--card:#ffffff;--accent:#0b74de;--header-bg:#000;--header-text:#fff}
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Inter,system-ui,Arial,sans-serif;background:var(--bg);color:#111}
+    header{
+      background:var(--header-bg);
+      color:var(--header-text);
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding:0;
+      height:100px;
+    }
+    .header-left{
+      background:var(--header-bg);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      width:150px;
+      height:100%;
+      padding:5px;
+    }
+    header img{
+      width:100%;
+      height:100%;
+      object-fit:contain;
+    }
+    header h1{
+      flex:1;
+      text-align:center;
+      font-size:28px;
+      margin:0;
+      font-weight:700;
+    }
+    .wrap{
+      min-height:calc(100vh - 100px);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:32px;
+    }
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:20px;
+      width:100%;
+      max-width:880px;
+    }
+    .card{
+      background:var(--card);
+      border-radius:12px;
+      overflow:hidden;
+      box-shadow:0 6px 20px rgba(12,15,20,0.08);
+      text-align:center;
+    }
+    a.card-link{display:block;text-decoration:none;color:inherit}
+    .img{width:100%;height:0;padding-bottom:56%;position:relative;background:#eee}
+    .img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+    .caption{padding:14px 16px;border-top:1px solid rgba(0,0,0,0.05)}
+    .title{font-weight:600;margin:0 0 6px;font-size:16px}
+    .subtitle{font-size:13px;color:#555;margin:0}
+    .card:hover{transform:translateY(-6px);transition:transform 220ms cubic-bezier(.2,.9,.2,1)}
+    @media (max-width:700px){
+      .grid{grid-template-columns:1fr}
+      header{height:80px}
+      .header-left{width:120px}
+      header h1{font-size:22px}
+    }
+  </style>
+<script type='text/javascript' src='//pl27893160.effectivegatecpm.com/dd/f0/5b/ddf05b87dae708e71c626f07888b67db.js'></script>
+
+</head>
+<body>
+  <header>
+    <div class="header-left">
+      <img src="logo.jpg" alt="Logo del sitio">
+    </div>
+    <h1>Partidos en vivo</h1>
+  </header>
+  <div class="wrap">
+    <div class="grid">
+      <article class="card">
+        <a class="card-link" href="https://ejemplo.com/pagina1" target="_blank" rel="noopener noreferrer">
+          <div class="img">
+            <img src="liga1max.png" alt="Imagen 1 - descripción">
+          </div>
+          <div class="caption">
+            <h3 class="title">Ver Liga 1 Max en Vivo</h3>
+            <p class="subtitle">Todos los encuentro del canal Liga 1 max en vivo.</p>
+          </div>
+        </a>
+      </article>
+
+      <article class="card">
+        <a class="card-link" href="https://ejemplo.com/pagina2" target="_blank" rel="noopener noreferrer">
+          <div class="img">
+            <img src="golperu.png" alt="Imagen 2 - descripción">
+          </div>
+          <div class="caption">
+            <h3 class="title">Ver Gol Peru en Vivo</h3>
+            <p class="subtitle">Todos los encuentro del canal Liga 1 max en vivo.</p>
+          </div>
+        </a>
+      </article>
+
+    </div>
+  </div>
+
+<footer style="background-color:black; color:white; text-align:center; padding:20px;">
+  <img class="footer-logo" src="yape.png" alt="Logo pequeño" style="width:150px; height:auto; display:block; margin:0 auto 10px;">
+  <span>© 2025 Todos los derechos reservados | Apoya a esta pagina para seguir en linea</span>
+</footer>
+</body>
+</html>
