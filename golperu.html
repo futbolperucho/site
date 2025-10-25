@@ -87,17 +87,39 @@
 
 
   <main>
-    <video controls poster="golperu.png">
-      <source src="https://wp9xqedt.fubohd.com:443/golperu/mono.m3u8?token=1878945c67bd5b2fd4b3295d77e20d5c843ea99e-71-1761239205-1761221205">
-      Tu navegador no soporta la reproducción de video.
-    </video>
-  </main>
 
- <main>
-    <video controls poster="golperu.png">
-      <source src="https://wp9xqedt.fubohd.com:443/golperu/mono.m3u8?token=1878945c67bd5b2fd4b3295d77e20d5c843ea99e-71-1761239205-1761221205">
-      Tu navegador no soporta la reproducción de video.
-    </video>
+
+
+<div style="text-align:center;">
+  <div id="video-frame" style="position:relative; display:inline-block;">
+    <!-- Imagen de portada -->
+    <img src="golperu.png" 
+         id="preview-img" 
+         style="width:360px; height:315px; cursor:pointer; border-radius:10px;">
+    <!-- Ícono de play -->
+    <div style="position:absolute; top:50%; left:50%; transform:translate(-50%, -50%);
+                font-size:60px; color:white; text-shadow:0 0 10px black; pointer-events:none;">
+      ▶
+    </div>
+  </div>
+</div>
+
+<script>
+document.getElementById('preview-img').addEventListener('click', function() {
+  document.getElementById('video-frame').innerHTML = `
+    <iframe width="360" height="315"
+      src="https://a2vlca.fubohd.com/liga1max/mono.m3u8?token=a3682131ffddceab3596818b468e7c76e9e023b0-6f-1761379982-1761361982"
+      frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+    </iframe>`;
+});
+</script>
+
+
+
+
+
+
+
   </main>
 
 
