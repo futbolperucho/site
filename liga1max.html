@@ -83,15 +83,44 @@
 </div>
 
   <main>
-<div style="text-align:center;">
-   <iframe width="360" height="315" 
-  src="http://38.246.112.217:8080/live/LeninGrados/42755197/1176411.m3u8?token=eUpjbVUxQ29PSFUzWTNV" 
-  title="YouTube video player" 
-  frameborder="0" 
-  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-  allowfullscreen>
-</iframe>
+
+
+
+<div id="player-container" style="text-align:center;">
+  <img id="preview" 
+       src="liga1max.png" 
+       alt="Vista previa" 
+       style="width:360px; height:315px; cursor:pointer; border-radius:10px;">
 </div>
+
+<script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+<script>
+document.getElementById('preview').addEventListener('click', function() {
+  const container = document.getElementById('player-container');
+  container.innerHTML = `<video id="video" width="360" height="315" controls autoplay></video>`;
+
+  const video = document.getElementById('video');
+  const videoSrc = "http://38.246.112.217:8080/live/LeninGrados/42755197/1176411.m3u8?token=eUpjbVUxQ29PSFUzWTNV";
+
+  if (Hls.isSupported()) {
+    const hls = new Hls();
+    hls.loadSource(videoSrc);
+    hls.attachMedia(video);
+    hls.on(Hls.Events.MANIFEST_PARSED, function() {
+      video.play();
+    });
+  } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+    video.src = videoSrc;
+    video.addEventListener('loadedmetadata', function() {
+      video.play();
+    });
+  }
+});
+</script>
+
+
+
+
   </main>
 
   <footer style="background-color:black; color:white; text-align:center; padding:20px;">
