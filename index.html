@@ -83,18 +83,31 @@
 <meta name="ppck-ver" content="b5ba0344348dd405dabca3d707f26698" />
 </head>
 <body>
-  <header>
-    <div class="header-left">
-      <img src="logo.jpg" alt="Logo del sitio" style="width:150px; height:auto;"">
 
+<header style="
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #000; /* Fondo negro */
+  color: #fff; /* Texto blanco */
+  padding: 15px 20px;
+">
+  <!-- Logo a la izquierda -->
+  <div style="flex: 1; text-align: left;">
+    <img src="logo.jpg" alt="Logo del sitio" style="width:150px; height:auto;">
+  </div>
 
+  <!-- GIF al centro -->
+  <div style="flex: 1; text-align: center;">
+    <img src="copa.gif" alt="Gif central" style="width:150px; height:auto;">
+  </div>
 
+  <!-- Texto a la derecha -->
+  <div style="flex: 1; text-align: right;">
+    <h1 style="margin:0; font-size:24px; color:#fff;">Partidos en vivo</h1>
+  </div>
+</header>
 
-
-          </div>
-    
-<img src="copa.gif" alt="Gif desde GitHub">
-  </header>
   <div class="wrap">
     <div class="grid">
       <article class="card">
